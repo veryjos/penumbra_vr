@@ -1,0 +1,154 @@
+<HUD_MODEL>
+	<MAIN
+		Name = "Hammer"
+		Type = "WeaponMelee"
+		ModelFile = "hud_object_hammer.dae"
+		EquipTime = 0.32f
+		UnequipTime = 0.23f
+		
+		EquipPose_Pos = "0.147 -0.173 0.190"
+		EquipPose_Rot =	"-16.8 0.0 0.0"
+		
+		UnequipPose_Pos = "0.147 -0.250 0.190"
+		UnequipPose_Rot = "-5.6 0.0 0.0"
+
+		EquipSound = ""
+		UnequipSound = ""
+		 
+		VrTransOffset = "0.0 0.0 0.2"
+		VrRotOffset = "-1.57 0.0 0.0"
+		VrScale = 2.85f
+	 />
+	 
+	 <MELEE
+	 	 DrawDebug = "false"
+	 	 
+	 	 HapticSize = "0.05 0.2 0.17"
+		
+		 VrHBTransOffset = "0.0 0.235 0.0"
+		 VrHBDamageSize = "0.04 0.05 0.16"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingLeft"
+	 	
+	 	StartPose_Pos = "0.173 -0.053 0.190"
+		StartPose_Rot =	"-23.1 26.4 -56.2"
+		
+		EndPose_Pos = "-0.403 -0.143 0.190"
+		EndPose_Rot = "-102.1 -12.8 -76.3"
+		
+		AttackLength = "0.15"
+		ChargeLength = "0.15"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "4"
+		MinImpulse = "1"
+		
+		MinMass = "2"
+		MaxMass = "28"
+	
+		MinDamage = "15"
+		MaxDamage = "15"
+		
+		SpinMul = "0 1 0"
+
+		DamageRange = "0.7"
+		DamageSize = "0.01 0.07 0.05"
+		
+		AttackRange = "1.4"
+		
+		AttackSpeed = "3"
+		AttackStrength = "5"
+		
+		HitPS = ""
+		HitPSPrio = 0
+		
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_hammer_hit"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingRight"
+	 	
+	 	StartPose_Pos = "-0.163 -0.033 0.190"
+		StartPose_Rot =	"3.8 -41.3 19.4"
+		
+		EndPose_Pos = "0.383 -0.177 0.190"
+		EndPose_Rot = "-132.9 -7.3 57.8"
+		
+		AttackLength = "0.10"
+		ChargeLength = "0.3"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "4"
+		MinImpulse = "1"
+		
+		MinMass = "2"
+		MaxMass = "28"
+	
+		MinDamage = "5"
+		MaxDamage = "9"
+		
+		SpinMul = "0 -1 0"
+
+		DamageRange = "0.7"
+		DamageSize = "1 0.3 1.4"
+		
+		AttackRange = "1.4"
+		
+		AttackSpeed = "3"
+		AttackStrength = "5"
+		
+		HitPS = ""
+		HitPSPrio = 0
+	
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_hammer_hit"
+	 />
+	 <ATTACK
+	 	Name = "Poke"
+	 	
+	 	StartPose_Pos = "0.143 -0.160 0.127"
+		StartPose_Rot =	"-71.7 11.2 5.7"
+		
+		EndPose_Pos = "0.080 -0.080 0.253"
+		EndPose_Rot = "-71.7 11.2 5.7"
+		
+		AttackLength = "0.12"
+		ChargeLength = "0.22"
+		
+		TimeOfAttack = "0.8"
+		
+		MaxImpulse = "2"
+		MinImpulse = "0.3"
+		
+		MinMass = "2"
+		MaxMass = "10"
+	
+		MinDamage = "1"
+		MaxDamage = "3"
+		
+		SpinMul = "0 0 0"
+
+		DamageRange = "0.5"
+		DamageSize = "0.2 0.2 1"
+		
+		AttackRange = "0.8"
+		
+		AttackSpeed = "1"
+		AttackStrength = "2"
+		
+		HitPS = ""
+		HitPSPrio = 0
+	
+		SwingSound = "weapon_generic_poke"
+		ChargeSound = "weapon_generic_charge_poke"
+		HitSound = "weapon_hammer_hit"
+	 />
+	 
+</HUD_MODEL>

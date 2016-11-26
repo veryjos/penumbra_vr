@@ -1,0 +1,39 @@
+<ENTITY>
+	<MAIN 
+		Name="item_oldkey" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0.9"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.1"
+		LinearDamping = "0.1"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_oldkey"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_oldkey.bmp"
+		NameCat="Items" NameEntry ="OldMineKey"
+		DescCat="Items" DescEntry ="OldMineKeyDesc"
+		
+		ItemType = "Normal"
+		
+		CanBeDropped="false"
+		
+		PickUpSound = "pick_key"
+	/>
+	
+</ENTITY>

@@ -1,0 +1,20 @@
+<HUD_MODEL>
+	<MAIN
+		Name = "Glowstick"
+		ModelFile = "hud_object_glowstick.dae"
+		EquipTime = 0.43f
+		UnequipTime = 0.3f
+		
+		EquipPose_Pos = "-0.167 -0.197 0.217"
+		EquipPose_Rot =	"-19.6 0.0 0.0"
+		
+		UnequipPose_Pos = "-0.200 -0.347 0.240"
+		UnequipPose_Rot = "-58.8 0.0 0.0"
+
+		EquipSound = ""
+		UnequipSound = ""
+		 
+		VrRotOffset = "1.57 0.0 0.0"
+		VrScale = 1.55f
+	 />
+</HUD_MODEL>

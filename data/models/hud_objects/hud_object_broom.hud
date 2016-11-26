@@ -1,0 +1,155 @@
+<HUD_MODEL>
+	<MAIN
+		Name = "BroomWeapon"
+		Type = "WeaponMelee"
+		ModelFile = "hud_object_broom.dae"
+		EquipTime = 0.6f
+		UnequipTime = 0.5f
+		
+		EquipPose_Pos = "0.073 -0.070 0.057"
+		EquipPose_Rot =	"134.1 -5.4 29.6"
+		
+		UnequipPose_Pos = "0.073 -0.120 0.057"
+		UnequipPose_Rot = "134.1 -5.4 29.6"
+		 
+		VrTransOffset = "0.0 0.0 -0.35"
+		VrRotOffset = "1.57 0.0 0.0"
+		VrScale = 12.5f
+
+		EquipSound = ""
+		UnequipSound = ""
+	 />
+	 
+	 <MELEE
+	 	 DrawDebug = "false"
+	 	 HapticSize = "0.05 0.44 0.17"
+	 	 HapticScale = "8"
+	 	 HapticRotate = "0 90 0"
+		
+		 VrHBTransOffset = "0.0 -0.585 0.0"
+		 VrHBDamageSize = "0.33 0.125 0.09"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingLeft"
+	 	
+	 	StartPose_Pos = "0.057 -0.037 0.057"
+		StartPose_Rot =	"84.7 -48.7 12.7"
+		
+		EndPose_Pos = "-0.120 -0.037 0.057"
+		EndPose_Rot = "123.9 54.6 27.0"
+		
+		AttackLength = "0.25"
+		ChargeLength = "0.4"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "7"
+		MinImpulse = "2"
+		
+		MinMass = "1.1"
+		MaxMass = "15"
+	
+		MinDamage = "1"
+		MaxDamage = "2"
+		
+		SpinMul = "0 0 0"
+
+		DamageRange = "1.2"
+		DamageSize = "1 0.3 1.2"
+		
+		AttackRange = "2"
+		
+		AttackSpeed = "3"
+		AttackStrength = "1"
+		
+		HitPS = "particle_broom_impact"
+		HitPSPrio = 15
+		
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_broom_hit"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingRight"
+	 	
+	 	StartPose_Pos = "-0.040 -0.037 0.057"
+		StartPose_Rot =	"81.1 -58.5 178.4"
+		
+		EndPose_Pos = "0.117 -0.041 0.057"
+		EndPose_Rot = "100.5 42.6 178.1"
+		
+		AttackLength = "0.25"
+		ChargeLength = "0.4"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "6"
+		MinImpulse = "2"
+		
+		MinMass = "1.1"
+		MaxMass = "15"
+	
+		MinDamage = "1"
+		MaxDamage = "3"
+		
+		SpinMul = "0 -1 0"
+
+		DamageRange = "1.2"
+		DamageSize = "1 0.3 1.2"
+		
+		AttackRange = "1.9"
+		
+		AttackSpeed = "4"
+		AttackStrength = "1"
+		
+		HitPS = "particle_broom_impact"
+		HitPSPrio = 15
+	
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_broom_hit"
+	 />
+	 <ATTACK
+	 	Name = "Poke"
+	 	
+	 	StartPose_Pos = "0.067 -0.060 0.027"
+		StartPose_Rot =	"108.8 14.7 7.6"
+		
+		EndPose_Pos = "0.023 -0.040 0.153"
+		EndPose_Rot = "120.6 13.8 10.6"
+		
+		AttackLength = "0.3"
+		ChargeLength = "0.2"
+		
+		TimeOfAttack = "0.8"
+		
+		MaxImpulse = "4"
+		MinImpulse = "0.5"
+		
+		MinMass = "1.1"
+		MaxMass = "15"
+	
+		MinDamage = "0.5"
+		MaxDamage = "1"
+		
+		SpinMul = "0 0 0"
+
+		DamageRange = "1.75"
+		DamageSize = "0.3 0.2 2.5"
+		
+		AttackRange = "2.5"
+		
+		AttackSpeed = "2"
+		AttackStrength = "1"
+		
+		HitPS = "particle_broom_impact"
+		HitPSPrio = 15
+	
+		SwingSound = "weapon_generic_poke"
+		ChargeSound = "weapon_generic_charge_poke"
+		HitSound = "weapon_broom_hit_poke"
+	 />
+	 
+</HUD_MODEL>

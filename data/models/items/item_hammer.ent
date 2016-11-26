@@ -1,0 +1,46 @@
+<ENTITY>
+	<MAIN 
+		Name="item_hammer" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Metal"
+		Mass="0.9"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.2"
+		LinearDamping = "0.2"
+		MaxAngularSpeed = "3"
+		MaxLinearSpeed = "3"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_hammer"	
+		CastShadows = "true"	
+	/>
+	
+	<GAME
+		ImageFile ="inventory_hammer.bmp"
+		
+		NameCat="Items" NameEntry ="Hammer"
+		DescCat="Items" DescEntry ="HammerDesc"
+		
+		ItemType = "WeaponMelee"
+		CanBeDropped="false"
+		
+		PickUpSound = "pick_metal_tool"
+		
+		HudModelFile = "hud_object_hammer.hud"
+		HudModelName = "Hammer"
+		
+		UseNormalMass = "true"
+	/>
+	
+</ENTITY>

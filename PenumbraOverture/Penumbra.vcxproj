@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C6E72C29-38A3-4897-AA05-E87B0323AA71}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25123.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\redist\</OutDir>
+    <IntDir>build/Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\redist</OutDir>
+    <IntDir>build/Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>C:\dev\vrpenumbra\dependencies\openvr-1.0.2\headers;../dependencies/include/AL;..\HPL1Engine\include;..\dependencies\include;..\OALWrapper\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <OutputFile>../redist/Penumbra.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Penumbra.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>openvr_api.lib;HPL.lib;fltk.lib;OALWrapper.lib;legacy_stdio_definitions.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\dev\vrpenumbra\dependencies\openvr-1.0.2\lib\win32;..\dependencies\lib\win32;..\HPL1Engine\lib;..\OALWrapper\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\dev\vrpenumbra\dependencies\openvr-1.0.2\headers;../dependencies/include/AL;..\HPL1Engine\include;..\dependencies\include;..\OALWrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>openvr_api.lib;legacy_stdio_definitions.lib;HPL.lib;OALWrapper.lib;fltk.lib;wsock32.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../redist/Penumbra.exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\dev\vrpenumbra\dependencies\openvr-1.0.2\lib\win32;..\dependencies\lib\win32;..\HPL1Engine\lib;..\OALWrapper\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>Penumbra.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AttackHandler.cpp" />
+    <ClCompile Include="ButtonHandler.cpp" />
+    <ClCompile Include="CharacterMove.cpp" />
+    <ClCompile Include="Credits.cpp" />
+    <ClCompile Include="DeathMenu.cpp" />
+    <ClCompile Include="DemoEndText.cpp" />
+    <ClCompile Include="EffectHandler.cpp" />
+    <ClCompile Include="FadeHandler.cpp" />
+    <ClCompile Include="GameArea.cpp" />
+    <ClCompile Include="GameDamageArea.cpp" />
+    <ClCompile Include="GameEnemy.cpp" />
+    <ClCompile Include="GameEnemy_Dog.cpp" />
+    <ClCompile Include="GameEnemy_Spider.cpp" />
+    <ClCompile Include="GameEnemy_Worm.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="GameForceArea.cpp" />
+    <ClCompile Include="GameItem.cpp" />
+    <ClCompile Include="GameItemType.cpp" />
+    <ClCompile Include="GameLadder.cpp" />
+    <ClCompile Include="GameLamp.cpp" />
+    <ClCompile Include="GameLink.cpp" />
+    <ClCompile Include="GameLiquidArea.cpp" />
+    <ClCompile Include="GameMessageHandler.cpp" />
+    <ClCompile Include="GameMusicHandler.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameSaveArea.cpp" />
+    <ClCompile Include="GameScripts.cpp" />
+    <ClCompile Include="GameStickArea.cpp" />
+    <ClCompile Include="GameSwingDoor.cpp" />
+    <ClCompile Include="GameTypes.cpp" />
+    <ClCompile Include="GraphicsHelper.cpp" />
+    <ClCompile Include="HapticGameCamera.cpp" />
+    <ClCompile Include="HudModel_Throw.cpp" />
+    <ClCompile Include="HudModel_Weapon.cpp" />
+    <ClCompile Include="Init.cpp" />
+    <ClCompile Include="IntroStory.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MapHandler.cpp" />
+    <ClCompile Include="MapLoadText.cpp" />
+    <ClCompile Include="Notebook.cpp" />
+    <ClCompile Include="NumericalPanel.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerHands.cpp" />
+    <ClCompile Include="PlayerHelper.cpp" />
+    <ClCompile Include="PlayerState_Interact.cpp" />
+    <ClCompile Include="PlayerState_InteractHaptX.cpp" />
+    <ClCompile Include="PlayerState_Interact_VR.cpp" />
+    <ClCompile Include="PlayerState_Misc.cpp" />
+    <ClCompile Include="PlayerState_MiscHaptX.cpp" />
+    <ClCompile Include="PlayerState_Misc_VR.cpp" />
+    <ClCompile Include="PlayerState_Weapon.cpp" />
+    <ClCompile Include="PlayerState_WeaponHaptX.cpp" />
+    <ClCompile Include="PlayerState_Weapon_VR.cpp" />
+    <ClCompile Include="PreMenu.cpp" />
+    <ClCompile Include="RadioHandler.cpp" />
+    <ClCompile Include="SaveHandler.cpp" />
+    <ClCompile Include="SaveTypes.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="TriggerHandler.cpp" />
+    <ClCompile Include="Triggers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AttackHandler.h" />
+    <ClInclude Include="ButtonHandler.h" />
+    <ClInclude Include="CharacterMove.h" />
+    <ClInclude Include="Credits.h" />
+    <ClInclude Include="DeathMenu.h" />
+    <ClInclude Include="DemoEndText.h" />
+    <ClInclude Include="EffectHandler.h" />
+    <ClInclude Include="FadeHandler.h" />
+    <ClInclude Include="GameArea.h" />
+    <ClInclude Include="GameDamageArea.h" />
+    <ClInclude Include="GameEnemy.h" />
+    <ClInclude Include="GameEnemy_Dog.h" />
+    <ClInclude Include="GameEnemy_Spider.h" />
+    <ClInclude Include="GameEnemy_Worm.h" />
+    <ClInclude Include="GameEntity.h" />
+    <ClInclude Include="GameForceArea.h" />
+    <ClInclude Include="GameItem.h" />
+    <ClInclude Include="GameItemType.h" />
+    <ClInclude Include="GameLadder.h" />
+    <ClInclude Include="GameLamp.h" />
+    <ClInclude Include="GameLink.h" />
+    <ClInclude Include="GameLiquidArea.h" />
+    <ClInclude Include="GameMessageHandler.h" />
+    <ClInclude Include="GameMusicHandler.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameSaveArea.h" />
+    <ClInclude Include="GameScripts.h" />
+    <ClInclude Include="GameStickArea.h" />
+    <ClInclude Include="GameSwingDoor.h" />
+    <ClInclude Include="GameTypes.h" />
+    <ClInclude Include="GlobalInit.h" />
+    <ClInclude Include="GraphicsHelper.h" />
+    <ClInclude Include="HapticGameCamera.h" />
+    <ClInclude Include="HudModel_Throw.h" />
+    <ClInclude Include="HudModel_Weapon.h" />
+    <ClInclude Include="Init.h" />
+    <ClInclude Include="IntroStory.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MapHandler.h" />
+    <ClInclude Include="MapLoadText.h" />
+    <ClInclude Include="Notebook.h" />
+    <ClInclude Include="NumericalPanel.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerHands.h" />
+    <ClInclude Include="PlayerHelper.h" />
+    <ClInclude Include="PlayerMoveStates.h" />
+    <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="PlayerState_Interact.h" />
+    <ClInclude Include="PlayerState_InteractHaptX.h" />
+    <ClInclude Include="PlayerState_Interact_VR.h" />
+    <ClInclude Include="PlayerState_Misc.h" />
+    <ClInclude Include="PlayerState_MiscHaptX.h" />
+    <ClInclude Include="PlayerState_MiscVR.h" />
+    <ClInclude Include="PlayerState_Misc_VR.h" />
+    <ClInclude Include="PlayerState_Weapon.h" />
+    <ClInclude Include="PlayerState_WeaponHaptX.h" />
+    <ClInclude Include="PlayerState_Weapon_VR.h" />
+    <ClInclude Include="PreMenu.h" />
+    <ClInclude Include="RadioHandler.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SaveHandler.h" />
+    <ClInclude Include="SaveTypes.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TriggerHandler.h" />
+    <ClInclude Include="Triggers.h" />
+    <ClInclude Include="VRHelper.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

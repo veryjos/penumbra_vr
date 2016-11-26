@@ -1,0 +1,21 @@
+<HUD_MODEL>
+	<MAIN
+		Name = "Hand_Grab"
+		ModelFile = "hud_object_hand_grab.dae"
+		EquipTime = 0.32f
+		UnequipTime = 0.23f
+		
+		EquipPose_Pos = "0.147 -0.173 0.190"
+		EquipPose_Rot =	"-16.8 0.0 0.0"
+		
+		UnequipPose_Pos = "0.147 -0.250 0.190"
+		UnequipPose_Rot = "-5.6 0.0 0.0"
+
+		EquipSound = ""
+		UnequipSound = ""
+		 
+		VrRotOffset = "0.0 0.525 -1.1"
+		VrScale = 0.006f
+	 />
+	 
+</HUD_MODEL>

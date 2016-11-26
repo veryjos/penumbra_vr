@@ -1,0 +1,8 @@
+<Material>
+  <Main Type="Bump" PhysicsMaterial="Metal" UseAlpha="False" DepthTest="True" />
+  <TextureUnits>
+    <Diffuse File="item_hand.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
+    <NMap File="item_hand_n.jpg" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
+    <Illumination File="" Compress="false" Type="2D" Mipmaps="true" Wrap="Repeat" AnimMode="None" AnimFrameTime="1" />
+  </TextureUnits>
+</Material>

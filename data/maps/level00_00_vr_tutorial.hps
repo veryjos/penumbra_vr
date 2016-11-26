@@ -1,0 +1,166 @@
+void FirstDoorAreaExamine01(string asEntity)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "FirstDoor01");
+	AddMessageTempString();
+	
+	RemoveEntityCallback("PlayerExamine","firstdoorarea");
+}
+
+void IntroTextEvent(string asTimer)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialIntro01");
+	AddMessageTempString();
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialIntro02");
+	AddMessageTempString();
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialIntro03");
+	AddMessageTempString();
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialIntro04");
+	AddMessageTempString();
+	
+  	DestroyTimer("IntroTextTimer");
+}
+
+void PickHammer01(string asItem)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialHammer01");
+	AddMessageTempString();
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialHammer02");
+	AddMessageTempString();
+}
+
+void PickGlowstick01(string asItem)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialGlowstick01");
+	AddMessageTempString();
+	AddToTempStringTrans("00_00_vr_tutorial", "VrTutorialGlowstick02");
+	AddMessageTempString();
+	
+	SetGameEntityActive("ladder", true);
+}
+
+void WireDoorInteract01(string asEntity)
+{
+	CreateTimer("WireDelay1", 0.3f, "WireDelay01",false);
+	
+	RemoveEntityCallback("PlayerInteract","wiredoor");
+}
+void WireDelay01(string asTimer)
+{
+	AddSubTitleTrans("00_00_vr_tutorial", "VrTutorialLock", 3.6f);
+	
+	DestroyTimer("WireDelay1");
+}
+
+void LockBreak01(string asEntity)
+{
+	SetDoorLocked("wiredoor", false);
+	
+	SetGameEntityDescriptionOnceTrans("wiredoor","","");
+	
+	RemoveEntityCallback("PlayerInteract","wiredoor");
+}
+
+void HoleExamine01(string asEntity)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "Hole01");
+	AddMessageTempString();
+	
+	if (HasItem("glowstick") == false) {
+		AddToTempStringTrans("00_00_vr_tutorial", "HoleNoGlowstick01");
+		AddMessageTempString();
+	}
+}
+
+void GoToMenu01(string asTimer)
+{
+	ResetGame();
+	
+	DestroyTimer("GoToMenu1");
+}
+
+void LockedDoorUnlock01(string asItem, string asEntity)
+{
+	SetDoorLocked("lockeddoor", false);
+	
+	CreateSoundEntityAt("Entity","unlock","unlock1","key_unlock.snt");
+	
+	RemoveEntityCallback("PlayerInteract","lockeddoor");
+	
+	RemoveItem("oldminekey");
+
+	CreateTimer("GoToMenu1", 0.3f, "GoToMenu01",false);
+}
+
+void LockedDoorInteract01(string asEntity)
+{
+	PlayGuiSound("interact_closed_door_old", 0.6f);
+	
+	RemoveEntityCallback("PlayerInteract","lockeddoor");
+}
+
+void PickNotebook01(string asItem)
+{
+	AddToTempStringTrans("00_00_vr_tutorial", "Notebook01");
+	AddMessageTempString();
+}
+
+//////////////////////////////////////////////////////////
+/*This function is run the FIRST time the map is loaded */
+void OnStart()
+{
+	StopGameMusic(0.5,0);
+	
+	SetGameEntityDescriptionTrans("firstdoor","00_00_vr_tutorial","FirstDoor01");
+	SetGameEntityDescriptionTrans("lockarea","00_00_vr_tutorial","Padlock01");
+	SetGameEntityDescriptionTrans("doorBlockBarrel","00_00_vr_tutorial","DoorBlockBarrel01");
+	
+	PlayGameMusic("penumbra_music_E1_A2",0.7,0.2,true,0);
+	
+	SetPlayerActive(true);
+	
+	AddPickupCallback("hammer", "PickHammer01");
+	SetDoorLocked("wiredoor", true);
+	AddEntityCallback("PlayerInteract","wiredoor","WireDoorInteract01");
+	AddEntityCallback("OnBreak","lock","LockBreak01");
+	
+	AddPickupCallback("glowstick", "PickGlowstick01");
+	AddEntityCallback("PlayerExamine","hole","HoleExamine01");
+	SetGameEntityActive("ladder", false);
+	
+	AddPickupCallback("notebook", "PickNotebook01");
+	
+	SetDoorLocked("lockeddoor", true);
+	SetGameEntityDescriptionTrans("lockeddoor","00_00_vr_tutorial","LockedDoor01");
+	AddEntityCallback("PlayerInteract","lockeddoor","LockedDoorInteract01");
+	AddUseCallback("oldminekey", "lockeddoor", "LockedDoorUnlock01");
+	
+	CreateTimer("IntroTextTimer", 5.0, "IntroTextEvent",false);
+}
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is loaded */
+void OnLoad()
+{
+	SetAmbientColor(0.1,0.1,0.1);
+
+	SetSkyboxActive(false);
+	SetSkybox("");
+	SetSkyboxColor(0.0,0.0,0.0,1);
+	
+	SetFogActive(false);
+}
+
+
+///////////////////////////////////////
+/*This function is run 60 times a sec*/
+void OnUpdate()
+{
+}
+
+
+/////////////////////////////////////////////////////
+/*This function is run everytime the map is unloaded */
+void OnExit()
+{
+	StopGameMusic(0.5,0);
+}

@@ -1,0 +1,155 @@
+<HUD_MODEL>
+	<MAIN
+		Name = "PickAxe"
+		Type = "WeaponMelee"
+		ModelFile = "hud_object_pickaxe.dae"
+		EquipTime = 0.3f
+		UnequipTime = 0.5f
+		
+		EquipPose_Pos = "0.023 -0.183 0.120"
+		EquipPose_Rot =	"-15.3 -7.1 -24.3"
+		
+		UnequipPose_Pos = "-0.063 -0.200 0.050"
+		UnequipPose_Rot = "4.3 -1.9 -36.5"
+		 
+		VrTransOffset = "0.0 0.0 0.2"
+		VrRotOffset = "-1.57 0.0 0.0"
+		VrScale = 3.6f
+
+		EquipSound = ""
+		UnequipSound = ""
+		
+	 />
+	 
+	 <MELEE
+	 	 DrawDebug = "false"
+	 	 
+	 	 HapticSize = "0.05 0.33 0.2f"
+		
+		 VrHBTransOffset = "0.0 0.562 0.0"
+		 VrHBDamageSize = "0.056 0.066 0.475"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingLeft"
+	 	
+	 	StartPose_Pos = "0.030 -0.067 0.020"
+		StartPose_Rot =	"-28.9 11.2 -68.7"
+		
+		EndPose_Pos = "-0.213 -0.057 0.053"
+		EndPose_Rot = "-144.7 9.0 -73.9"
+		
+		AttackLength = "0.2"
+		ChargeLength = "0.33"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "9"
+		MinImpulse = "2"
+		
+		MinMass = "2"
+		MaxMass = "28"
+	
+		MinDamage = "15"
+		MaxDamage = "20"
+		
+		SpinMul = "0 1 0"
+
+		DamageRange = "0.8"
+		DamageSize = "1 0.3 1.6"
+		
+		AttackRange = "1.6"
+		
+		AttackSpeed = "4"
+		AttackStrength = "10"
+		
+		HitPS = ""
+		HitPSPrio = 0
+		
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_pickaxe_hit"
+	 />
+	 
+	 <ATTACK
+	 	Name = "SwingRight"
+	 	
+	 	StartPose_Pos = "-0.137 -0.113 0.140"
+		StartPose_Rot =	"-10.5 -21.0 35.4"
+		
+		EndPose_Pos = "0.227 -0.130 0.087"
+		EndPose_Rot = "-133.8 -6.4 73.1"
+		
+		AttackLength = "0.16"
+		ChargeLength = "0.4"
+		
+		TimeOfAttack = "0.5"
+		
+		MaxImpulse = "9"
+		MinImpulse = "2"
+		
+		MinMass = "2"
+		MaxMass = "28"
+	
+		MinDamage = "15"
+		MaxDamage = "20"
+		
+		SpinMul = "0 -1 0"
+
+		DamageRange = "0.8"
+		DamageSize = "1 0.3 1.6"
+		
+		AttackRange = "1.6"
+		
+		AttackSpeed = "4"
+		AttackStrength = "10"
+		
+		HitPS = ""
+		HitPSPrio = 0
+	
+		SwingSound = "weapon_generic_swing"
+		ChargeSound = "weapon_generic_charge"
+		HitSound = "weapon_pickaxe_hit"
+	 />
+	 <ATTACK
+	 	Name = "Poke"
+	 	
+	 	StartPose_Pos = "0.120 -0.123 -0.013"
+		StartPose_Rot =	"-83.0 -7.4 92.9"
+		
+		EndPose_Pos = "0.033 -0.090 0.160"
+		EndPose_Rot = "-91.0 -16.9 110.3"
+		
+		AttackLength = "0.1"
+		ChargeLength = "0.32"
+		
+		TimeOfAttack = "0.8"
+		
+		MaxImpulse = "6"
+		MinImpulse = "0.5"
+		
+		MinMass = "2"
+		MaxMass = "28"
+	
+		MinDamage = "3"
+		MaxDamage = "5"
+		
+		SpinMul = "0 0 0"
+
+		DamageRange = "0.5"
+		DamageSize = "0.3 0.2 1.5"
+		
+		AttackRange = "0.8"
+		
+		AttackSpeed = "2"
+		AttackStrength = "1"
+		
+		HitPS = ""
+		HitPSPrio = 0
+	
+		SwingSound = "weapon_generic_poke"
+		ChargeSound = "weapon_generic_charge_poke"
+		HitSound = "weapon_pickaxe_hit_poke"
+	 />
+	 
+</HUD_MODEL>

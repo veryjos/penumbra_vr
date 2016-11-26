@@ -1,0 +1,39 @@
+<ENTITY>
+	<MAIN 
+		Name="item_note_vrtut01" 
+		Type="Item" 
+		Subtype="Normal" 
+	/>
+	
+	<PHYSICS
+		Collides = "true"
+		CollideCharacter = "false"
+		HasPhysics = "true"
+		Material="Dyn_Paper"
+		Mass="0.9"
+		InertiaScale = "1 1 1"
+		AngularDamping = "0.2"
+		LinearDamping = "0.2"
+		BlocksSound = "false"
+		ContinousCollision = "true"
+	/>
+	
+	
+	<GRAPHICS
+		ModelFile = "item_note"	
+		CastShadows = "false"	
+	/>
+	
+	<GAME
+		ImageFile =""
+		
+		NameCat="Items" NameEntry ="NoteVrTut01"
+		DescCat="Items" DescEntry ="NoteVrTut01Desc"
+		
+		ItemType = "Note"
+		CanBeDropped = "false"
+		
+		PickUpSound = "pick_note"
+	/>
+	
+</ENTITY>
