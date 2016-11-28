@@ -1040,7 +1040,7 @@ void cPlayer::OnWorldLoad()
 	
 	mpCharBody->SetMaxGravitySpeed(40.0f);
 	mpCharBody->SetCustomGravityActive(true);
-	mpCharBody->SetCustomGravity(cVector3f(0,-18.0f,0));
+	mpCharBody->SetCustomGravity(cVector3f(0,-10.0f,0));
 
 	mpCharBody->SetMaxPushMass(mpInit->mpGameConfig->GetFloat("Player","MaxPushMass",1));
 	mpCharBody->SetPushForce(mpInit->mpGameConfig->GetFloat("Player","PushForce",1));
@@ -1478,7 +1478,9 @@ void cPlayer::Update(float afTimeStep)
 
       mpCharBody->vr_velocity = bodyDelta;
 
+      mpCharBody->vr_stepstaticonly = true;
       mpCharBody->Update(afTimeStep);
+      mpCharBody->vr_stepstaticonly = false;
     }
 
     // Now add input movement

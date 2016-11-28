@@ -60,6 +60,7 @@ namespace hpl {
     cVector3f mvNormal;
 		bool mbCollide;
     bool mbIsPlayer;
+    bool mbIsStatic;
 	};
 
 	//------------------------------------------------
@@ -348,6 +349,7 @@ namespace hpl {
 
     cVector3f vr_velocity;
     bool vr_skipnextupdate;
+    bool vr_stepstaticonly;
 
 	protected:
 		

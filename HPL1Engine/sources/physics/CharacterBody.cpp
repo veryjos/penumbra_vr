@@ -147,6 +147,7 @@ namespace hpl {
 
     vr_velocity = cVector3f(0.0f, 0.0f, 0.0f);
     vr_skipnextupdate = false;
+    vr_stepstaticonly = false;
 
     SetIsPlayer(false);
 	}
@@ -183,6 +184,8 @@ namespace hpl {
 	{
 		mfMinDist = 10000.0f;
 		mbCollide = false;
+    mbIsStatic = false;
+    mvNormal.x = mvNormal.y = mvNormal.z = 0.0f;
 	}
 	
 	//-----------------------------------------------------------------------
@@ -198,6 +201,7 @@ namespace hpl {
 			mfMinDist = apParams->mfDist;
       mvNormal = apParams->mvNormal;
 			mbCollide = true;
+      mbIsStatic = pBody->GetMass() == 0.0f;
 		}
 
 		return true;
@@ -878,24 +882,29 @@ namespace hpl {
           mpWorld->CastRay(mpRayCallback, start, end, true, true, false);
 
           if (mpRayCallback->mbCollide) {
-            float stepHeight = mpBody->GetShape()->GetSize().y - mpRayCallback->mfMinDist;
-            cVector3f normal = mpRayCallback->mvNormal;
-            
-            if (stepHeight <= mfMaxStepHeight) {
-              if (normal.y >= 0.5f && !(stepHeight <= 0.0f)) {
-                cVector3f stepPos = wantPos + cVector3f(0.0f, stepHeight, 0.0f) + vMoveDir * (epsilon * i);
-                cVector3f checkPos;
+            if ((vr_stepstaticonly && mpRayCallback->mbIsStatic) || !vr_stepstaticonly) {
+              float stepHeight = mpBody->GetShape()->GetSize().y - mpRayCallback->mfMinDist;
+              cVector3f normal = mpRayCallback->mvNormal;
 
-                mpWorld->CheckShapeWorldCollision(&checkPos, mpBody->GetShape(),
-                  cMath::MatrixTranslate(stepPos), mpBody,
-                  false, true, NULL, mbCollideCharacter, false, mbCollidePlayer, mbIsPlayer);
+              if (stepHeight <= mfMaxStepHeight) {
+                if (normal.y >= 0.5f && !(stepHeight <= 0.0f)) {
+                  cVector3f stepPos = wantPos + cVector3f(0.0f, stepHeight, 0.0f) + vMoveDir * (epsilon * i);
+                  cVector3f checkPos;
 
-                if (stepPos == checkPos) {
-                  mvPosition = stepPos;
+                  if (fabs(stepPos.y - mvPosition.y) > mfMaxStepHeight)
+                    continue;
+
+                  mpWorld->CheckShapeWorldCollision(&checkPos, mpBody->GetShape(),
+                    cMath::MatrixTranslate(stepPos), mpBody,
+                    false, true, NULL, mbCollideCharacter, false, mbCollidePlayer, mbIsPlayer);
+
+                  if (stepPos == checkPos) {
+                    mvPosition = stepPos;
+                  }
                 }
-              }
 
-              break;
+                break;
+              }
             }
           }
         }
