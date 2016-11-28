@@ -742,7 +742,7 @@ void cPlayer::SetPickedBody(iPhysicsBody* apBody)
 
 float cPlayer::GetPickedDist()
 { 
-	return mpPickRayCallback->mfPickedDist;
+  return 0; // mpPickRayCallback->mfPickedDist;
 }
 
 const cVector3f& cPlayer::GetPickedPos()
