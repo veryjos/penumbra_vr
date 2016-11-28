@@ -26,6 +26,7 @@
 #include "EffectHandler.h"
 #include "HapticGameCamera.h"
 #include "VRHelper.hpp"
+#include "MainMenu.h"
 
 //////////////////////////////////////////////////////////////////////////
 // FRONT STATE
@@ -40,13 +41,16 @@ cNotebookState_Front::cNotebookState_Front(cInit *apInit, cNotebook *apNotebook)
 	
 	mpFrontFont =  mpInit->mpGame->GetResources()->GetFontManager()->CreateFontData("verdana.fnt");
 
-	mvOptions.resize(2);
+	mvOptions.resize(3);
 	
 	mvOptions[0].msText = kTranslate("Notebook", "TaskList");
 	mvOptions[0].mvPos = cVector3f(400, 220, 4);
 
 	mvOptions[1].msText = kTranslate("Notebook", "PickedNotes");
 	mvOptions[1].mvPos = cVector3f(400, 280, 4);
+
+  mvOptions[1].msText = kTranslate("ButtonNames", "Menu");
+  mvOptions[1].mvPos = cVector3f(400, 280 + 60 + 20, 4);
 
 	mlSelected = -1;
 
@@ -70,6 +74,7 @@ void cNotebookState_Front::OnEnterState(int alLastState)
 {
 	mvOptions[0].msText = kTranslate("Notebook", "TaskList");
 	mvOptions[1].msText = kTranslate("Notebook", "PickedNotes");
+  mvOptions[2].msText = kTranslate("ButtonNames", "Menu");
 	
 	mpNotebook->SetBookType(eNotebookType_Front);
 }
@@ -147,6 +152,10 @@ void cNotebookState_Front::OnMouseDown(eMButton aButton)
 		mpStateMachine->ChangeState(eNotebookState_NoteList);
 		mpInit->mpGame->GetSound()->GetSoundHandler()->PlayGui("gui_notebook_open",false,1);
 	}
+  else if (mlSelected == 2)
+  {
+    mpInit->mpMainMenu->SetActive(true);
+  }
 }
 //-----------------------------------------------------------------------
 
