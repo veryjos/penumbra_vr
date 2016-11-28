@@ -49,8 +49,8 @@ cNotebookState_Front::cNotebookState_Front(cInit *apInit, cNotebook *apNotebook)
 	mvOptions[1].msText = kTranslate("Notebook", "PickedNotes");
 	mvOptions[1].mvPos = cVector3f(400, 280, 4);
 
-  mvOptions[1].msText = kTranslate("ButtonNames", "Menu");
-  mvOptions[1].mvPos = cVector3f(400, 280 + 60 + 20, 4);
+  mvOptions[2].msText = kTranslate("ButtonNames", "Menu");
+  mvOptions[2].mvPos = cVector3f(400, 280 + 100, 4);
 
 	mlSelected = -1;
 
